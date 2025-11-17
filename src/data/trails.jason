@@ -1,13 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import './App.css'
-import Navigation from './components/Navigation'
-import TrailList from './components/TrailList'
-import TrailDetail from './components/TrailDetail'
-import About from './components/About'
-
-
-const trailsData = [
+[
   {
     "id": 1,
     "name": "Picnic Point Trail",
@@ -45,35 +36,3 @@ const trailsData = [
     "reviews": []
   }
 ]
-
-function App() {
-  const [trails, setTrails] = useState([])
-
-  useEffect(() => {
-    setTrails(trailsData)
-  }, [])
-
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <Navigation />
-        <Routes>
-          <Route 
-            path="/" 
-            element={<TrailList trails={trails} />} 
-          />
-          <Route 
-            path="/trail/:id" 
-            element={<TrailDetail trails={trails} />} 
-          />
-          <Route 
-            path="/about" 
-            element={<About />} 
-          />
-        </Routes>
-      </div>
-    </BrowserRouter>
-  )
-}
-
-export default App
