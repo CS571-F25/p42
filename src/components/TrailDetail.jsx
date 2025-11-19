@@ -65,14 +65,6 @@ function TrailDetail({ trails }) {
             <Card.Body>
               <h5>Trail Information</h5>
               <hr />
-              <div className="mb-3">
-                <strong>Overall Rating</strong>
-                <div className="d-flex align-items-center mt-1">
-                  <FaStar className="text-warning" />
-                  <span className="ms-2 fs-4 fw-bold">{trail.rating}</span>
-                </div>
-              </div>
-              <hr />
               <div className="mb-2">
                 <strong>Difficulty:</strong> {trail.difficulty}
               </div>

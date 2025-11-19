@@ -4,7 +4,7 @@ import TrailCard from './TrailCard'
 function TrailList({ trails }) {
   return (
     <Container className="py-4">
-      <h1 className="text-center mb-4">Discover Madison Hiking Trails</h1>
+      <h1 className="text-center mb-4">Madison Hiking Trails</h1>
       
       <Row>
         {trails.map(trail => (

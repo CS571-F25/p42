@@ -1,6 +1,5 @@
 import { Card, Badge } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { FaStar } from 'react-icons/fa'
 
 function TrailCard({ trail }) {
   return (
@@ -16,11 +15,6 @@ function TrailCard({ trail }) {
         <div className="mb-2">
           <Badge bg="secondary" className="me-2">{trail.difficulty}</Badge>
           <Badge bg="info">{trail.distance}</Badge>
-        </div>
-        
-        <div className="mb-2 d-flex align-items-center">
-          <FaStar className="text-warning me-1" />
-          <span className="fw-bold">{trail.rating}</span>
         </div>
         
         <Card.Text className="text-muted small mb-3 flex-grow-1">

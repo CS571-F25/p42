@@ -2,7 +2,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap'
 
 function About() {
   return (
-    <Container className="py-5">
+    <Container className="py-4">
       <h1 className="text-center mb-4">About Madison Hiking Guide</h1>
       
       <Row className="justify-content-center">
@@ -13,14 +13,14 @@ function About() {
               <p>
                 Madison Hiking Guide helps students and residents discover the 
                 best hiking trails in the Madison area. Whether you're looking 
-                for an easy lakeside walk or a challenging mountain hike, we've 
+                for an easy lakeside walk or a challenging forest hike, we've 
                 got you covered.
               </p>
 
               <h3 className="mt-4">Features</h3>
               <ul>
                 <li>Browse detailed information about local trails</li>
-                <li>Filter trails by difficulty and rating</li>
+                <li>Filter trails by difficulty and length</li>
                 <li>Save your favorite trails</li>
                 <li>Read and write reviews</li>
                 <li>View trail locations and features</li>
@@ -37,7 +37,6 @@ function About() {
                 <li>React 18</li>
                 <li>React Router</li>
                 <li>React Bootstrap</li>
-                <li>React Icons</li>
               </ul>
             </Card.Body>
           </Card>

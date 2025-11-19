@@ -13,6 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.App {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -25,7 +31,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  place-items: center, top;
   min-width: 320px;
   min-height: 100vh;
 }

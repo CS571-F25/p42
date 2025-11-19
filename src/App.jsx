@@ -7,14 +7,13 @@ import TrailDetail from './components/TrailDetail'
 import About from './components/About'
 
 
-const trailsData = [
+const trailsData = [ // much of this stuff is placeholder for now, especially the pictures
   {
     "id": 1,
     "name": "Picnic Point Trail",
     "location": "University Bay Drive, Madison, WI",
     "difficulty": "Easy",
-    "distance": "2.3 miles",
-    "rating": 4.5,
+    "distance": "2 mi",
     "description": "A scenic lakeside trail perfect for walking, running, or biking. Picnic Point offers beautiful views of Lake Mendota and is a popular spot for students and locals alike.",
     "image": "https://images.unsplash.com/photo-1551632811-561732d1e306?w=500",
     "features": ["Lake Views", "Accessible", "Dog Friendly"],
@@ -22,26 +21,13 @@ const trailsData = [
   },
   {
     "id": 2,
-    "name": "Indian Lake County Park",
-    "location": "8200 Old Sauk Rd, Cross Plains, WI",
-    "difficulty": "Moderate",
-    "distance": "3.5 miles",
-    "rating": 4.2,
-    "description": "Features wooded trails around a beautiful lake with opportunities for wildlife viewing.",
+    "name": "Lakeshore Trail",
+    "location": "idk",
+    "difficulty": "Medium",
+    "distance": "3 mi",
+    "description": "Features wooded trails around a beautiful lake.",
     "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500",
-    "features": ["Wildlife", "Lake Views", "Parking Available"],
-    "reviews": []
-  },
-  {
-    "id": 3,
-    "name": "Blue Mound State Park",
-    "location": "4350 Mounds Park Rd, Blue Mounds, WI",
-    "difficulty": "Hard",
-    "distance": "6 miles",
-    "rating": 4.8,
-    "description": "Highest point in southern Wisconsin with spectacular views.",
-    "image": "https://images.unsplash.com/photo-1445308394109-4ec2920981b1?w=500",
-    "features": ["Mountain Views", "Challenging", "Observation Towers"],
+    "features": ["Dog Friendly", "Lake Views", "Parking Available"],
     "reviews": []
   }
 ]
