@@ -45,15 +45,15 @@ function App() {
         <Navigation />
         <Routes>
           <Route 
-            path="/" 
+            path="/p42/" 
             element={<TrailList trails={trails} />} 
           />
           <Route 
-            path="/trail/:id" 
+            path="/p42/trail/:id" 
             element={<TrailDetail trails={trails} />} 
           />
           <Route 
-            path="/about" 
+            path="/p42/about"
             element={<About />} 
           />
         </Routes>
