@@ -7,6 +7,7 @@ import TrailList from './components/TrailList';
 import TrailDetail from './components/TrailDetail';
 import About from './components/About';
 import SearchBar from './components/SearchBar';
+import { Navigate } from "react-router-dom";
 
 // 🎯 20条精选路线数据
 const trailsData = [
@@ -313,15 +314,14 @@ const trailsData = [
 ];
 
 function App() {
-  const [trails, setTrails] = useState([]);
+const [trails, setTrails] = useState(trailsData);
   const [favorites, setFavorites] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
-    // 设置路线数据
-    setTrails(trailsData);
+    
     
     // 从 localStorage 加载收藏
     const savedFavorites = localStorage.getItem('favoriteTrails');
@@ -432,6 +432,7 @@ function App() {
               path="/about" 
               element={<About />} 
             />
+             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
       </div>
