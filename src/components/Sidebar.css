@@ -1,0 +1,277 @@
+
+.sidebar {
+  position: fixed;
+  left: -280px;
+  top: 0;
+  width: 280px;
+  height: 100vh;
+  background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  overflow-y: auto;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.3s;
+}
+
+
+.sidebar-header {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 24px;
+  color: #3498db;
+}
+
+.sidebar-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sidebar-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.sidebar-close:hover {
+  color: #3498db;
+}
+
+
+.sidebar-nav {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #3498db;
+  padding-left: 25px;
+}
+
+.nav-item svg {
+  font-size: 18px;
+}
+
+
+.sidebar-section {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px 15px;
+}
+
+.section-icon {
+  color: #3498db;
+  font-size: 18px;
+}
+
+.section-header h3 {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.count {
+  background: #3498db;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+.favorites-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favorites-list li {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.favorites-list li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.favorite-item {
+  padding: 12px 20px;
+}
+
+.trail-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.trail-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.star-icon {
+  color: #f39c12;
+}
+
+.difficulty {
+  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+
+.trails-directory {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.trails-directory li {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.trails-directory li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.directory-item {
+  padding: 12px 20px;
+}
+
+.trail-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.difficulty-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.difficulty-badge.easy {
+  background: #27ae60;
+}
+
+.difficulty-badge.moderate {
+  background: #f39c12;
+}
+
+.difficulty-badge.hard {
+  background: #e74c3c;
+}
+
+.distance {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+.sidebar-footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: auto;
+}
+
+.copyright {
+  margin-top: 5px;
+}
+
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+
+@media (max-width: 767px) {
+  .sidebar {
+    width: 100%;
+    left: -100%;
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+}

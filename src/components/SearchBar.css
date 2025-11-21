@@ -1,0 +1,143 @@
+
+.search-bar-container {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 15px 20px;
+}
+
+.search-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-button {
+  background: #27ae60;
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 18px;
+}
+
+.menu-button:hover {
+  background: #229954;
+  transform: scale(1.05);
+}
+
+.search-input-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  color: #7f8c8d;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 45px 12px 45px;
+  border: 2px solid #ecf0f1;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+
+.search-input::placeholder {
+  color: #bdc3c7;
+}
+
+.clear-button {
+  position: absolute;
+  right: 15px;
+  background: #95a5a6;
+  border: none;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.clear-button:hover {
+  background: #7f8c8d;
+  transform: scale(1.1);
+}
+
+.search-results-info {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 10px 20px;
+  margin-top: 5px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  color: #7f8c8d;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-results-info strong {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+
+@media (max-width: 767px) {
+  .search-bar-container {
+    padding: 10px 15px;
+  }
+
+  .search-input {
+    font-size: 14px;
+    padding: 10px 40px 10px 40px;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .search-input::placeholder {
+    font-size: 13px;
+  }
+}

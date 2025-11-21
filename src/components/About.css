@@ -1,0 +1,249 @@
+/* About 容器 */
+.about-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  animation: fadeIn 0.6s ease-in;
+}
+
+/* 头部 */
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-icon {
+  font-size: 80px;
+  color: #27ae60;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.about-header h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+/* Mission Card */
+.mission-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+  color: white;
+  padding: 20px;
+}
+
+.mission-card h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.mission-card p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Feature Cards */
+.features-section {
+  margin-top: 40px;
+}
+
+.feature-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s;
+  height: 100%;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  margin: 30px auto 20px;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  color: #7f8c8d;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Team Card */
+.team-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.team-card h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.team-card p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.team-card strong {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.team-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.team-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.team-links a:hover {
+  background: #27ae60;
+  transform: translateY(-2px);
+}
+
+.team-links svg {
+  font-size: 20px;
+}
+
+/* Tech Card */
+.tech-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.tech-card h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.tech-badge {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.tech-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+/* Footer */
+.about-footer {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px solid #ecf0f1;
+}
+
+.about-footer p {
+  color: #7f8c8d;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.copyright {
+  font-size: 14px;
+}
+
+/* 响应式 */
+@media (max-width: 767px) {
+  .about-header h1 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .about-icon {
+    font-size: 60px;
+  }
+
+  .mission-card h2,
+  .team-card h2,
+  .tech-card h2 {
+    font-size: 24px;
+  }
+
+  .feature-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+  }
+
+  .tech-stack {
+    justify-content: flex-start;
+  }
+}
