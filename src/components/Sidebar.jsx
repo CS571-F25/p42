@@ -1,16 +1,14 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { FaHiking, FaHeart, FaInfoCircle, FaBars, FaTimes, FaStar } from 'react-icons/fa';
+import { FaHiking, FaHeart, FaInfoCircle, FaTimes, FaStar } from 'react-icons/fa';
 import './Sidebar.css';
 
 function Sidebar({ trails, favorites, isOpen, onToggle }) {
   const navigate = useNavigate();
-  const favoriteTrails = trails.filter(trail => favorites.includes(trail.id));
+  const favoriteTrails = trails.filter(t => favorites.includes(t.id));
 
   return (
     <>
-      {isOpen && (
-        <div className="sidebar-overlay" onClick={onToggle}></div>
-      )}
+      {isOpen && <div className="sidebar-overlay" onClick={onToggle}></div>}
 
       <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
         <div className="sidebar-header">
@@ -18,6 +16,7 @@ function Sidebar({ trails, favorites, isOpen, onToggle }) {
             <FaHiking className="logo-icon" />
             <h2>Madison Trails</h2>
           </div>
+          
           <button className="sidebar-close" onClick={onToggle}>
             <FaTimes />
           </button>
@@ -41,23 +40,26 @@ function Sidebar({ trails, favorites, isOpen, onToggle }) {
               <h3>Favorites</h3>
               <span className="count">{favoriteTrails.length}</span>
             </div>
-            <ul className="favorites-list">
+
+            <div className="trail-list-wrapper">
               {favoriteTrails.map(trail => (
-                <li key={trail.id} onClick={() => {
-                  navigate(`/trail/${trail.id}`);
-                  onToggle();
-                }}>
-                  <div className="favorite-item">
-                    <span className="trail-name">{trail.name}</span>
-                    <div className="trail-meta">
-                      <FaStar className="star-icon" />
-                      <span>{trail.rating}</span>
-                      <span className="difficulty">{trail.difficulty}</span>
-                    </div>
+                <div
+                  key={trail.id}
+                  className="trail-card-mini"
+                  onClick={() => {
+                    navigate(`/trail/${trail.id}`);
+                    onToggle();
+                  }}
+                >
+                  <div className="trail-card-title">{trail.name}</div>
+                  <div className="trail-card-meta">
+                    <FaStar className="star-mini" />
+                    <span className="meta-rating">{trail.rating}</span>
+                    <span className="badge-mini">{trail.difficulty}</span>
                   </div>
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         )}
 
@@ -67,24 +69,26 @@ function Sidebar({ trails, favorites, isOpen, onToggle }) {
             <h3>All Trails</h3>
             <span className="count">{trails.length}</span>
           </div>
-          <ul className="trails-directory">
+
+          <div className="trail-list-wrapper">
             {trails.map(trail => (
-              <li key={trail.id} onClick={() => {
-                navigate(`/trail/${trail.id}`);
-                onToggle();
-              }}>
-                <div className="directory-item">
-                  <span className="trail-name">{trail.name}</span>
-                  <div className="trail-info">
-                    <span className={`difficulty-badge ${trail.difficulty.toLowerCase()}`}>
-                      {trail.difficulty}
-                    </span>
-                    <span className="distance">{trail.distance}</span>
-                  </div>
+              <div
+                key={trail.id}
+                className="trail-card-mini"
+                onClick={() => {
+                  navigate(`/trail/${trail.id}`);
+                  onToggle();
+                }}
+              >
+                <div className="trail-card-title">{trail.name}</div>
+
+                <div className="trail-card-meta">
+                  <span className="badge-mini">{trail.difficulty}</span>
+                  <span className="meta-distance">{trail.distance}</span>
                 </div>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
 
         <div className="sidebar-footer">

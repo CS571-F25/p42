@@ -10,7 +10,7 @@ function TrailList({ trails, favorites, toggleFavorite, isMobile }) {
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
   const [sortBy, setSortBy] = useState('rating');
   
-  // 移动端轮播状态
+ 
   const [currentIndex, setCurrentIndex] = useState(0);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -28,7 +28,7 @@ function TrailList({ trails, favorites, toggleFavorite, isMobile }) {
     return true;
   });
 
-  // 排序
+ 
   const sortedTrails = [...filteredTrails].sort((a, b) => {
     switch(sortBy) {
       case 'rating':
@@ -42,12 +42,12 @@ function TrailList({ trails, favorites, toggleFavorite, isMobile }) {
     }
   });
 
-  // 重置索引当筛选改变时
+
   useEffect(() => {
     setCurrentIndex(0);
   }, [filterDifficulty, filterRating, showFavoritesOnly, sortBy]);
 
-  // 触摸滑动处理
+
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -58,11 +58,11 @@ function TrailList({ trails, favorites, toggleFavorite, isMobile }) {
 
   const handleTouchEnd = () => {
     if (touchStartX.current - touchEndX.current > 50) {
-      // 向左滑 - 下一个
+     
       handleNext();
     }
     if (touchEndX.current - touchStartX.current > 50) {
-      // 向右滑 - 上一个
+      
       handlePrev();
     }
   };
@@ -82,7 +82,7 @@ function TrailList({ trails, favorites, toggleFavorite, isMobile }) {
         <p>Explore the best trails in Madison area</p>
       </div>
       
-      {/* 筛选和排序 */}
+    
       <div className="filter-section">
         <Row className="g-3">
           <Col xs={6} md={3}>
@@ -146,7 +146,7 @@ function TrailList({ trails, favorites, toggleFavorite, isMobile }) {
         </div>
       </div>
 
-      {/* 移动端：单页轮播 */}
+
       {isMobile && sortedTrails.length > 0 ? (
         <div className="mobile-carousel">
           <div 
@@ -163,7 +163,7 @@ function TrailList({ trails, favorites, toggleFavorite, isMobile }) {
             />
           </div>
 
-          {/* 导航按钮 */}
+       
           <div className="carousel-controls">
             <Button 
               variant="light" 
@@ -190,7 +190,7 @@ function TrailList({ trails, favorites, toggleFavorite, isMobile }) {
             </Button>
           </div>
 
-          {/* 指示点 */}
+      
           <div className="carousel-dots">
             {sortedTrails.map((_, index) => (
               <button
@@ -202,7 +202,7 @@ function TrailList({ trails, favorites, toggleFavorite, isMobile }) {
           </div>
         </div>
       ) : 
-      /* 桌面端：网格布局 */
+     
       !isMobile ? (
         <Row>
           {sortedTrails.length > 0 ? (

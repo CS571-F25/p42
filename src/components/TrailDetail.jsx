@@ -42,7 +42,7 @@ function TrailDetail({ trails, favorites, toggleFavorite, addReview }) {
   return (
     <div className="trail-detail-page">
       <Container>
-        {/* 返回按钮 */}
+       
         <Button 
           variant="light" 
           className="back-button"
@@ -51,7 +51,7 @@ function TrailDetail({ trails, favorites, toggleFavorite, addReview }) {
           <FaArrowLeft /> Back to Trails
         </Button>
 
-        {/* 主图片 */}
+    
         <div className="trail-hero">
           <img src={trail.image} alt={trail.name} className="hero-image" />
           <div className="hero-overlay">
@@ -68,7 +68,7 @@ function TrailDetail({ trails, favorites, toggleFavorite, addReview }) {
           </div>
         </div>
 
-        {/* 标题区域 */}
+      
         <Row className="trail-header">
           <Col>
             <h1 className="trail-name">{trail.name}</h1>
@@ -88,7 +88,7 @@ function TrailDetail({ trails, favorites, toggleFavorite, addReview }) {
           </Col>
         </Row>
 
-        {/* 统计信息卡片 */}
+       
         <Row className="stats-row">
           <Col xs={6} md={3}>
             <Card className="stat-card">
@@ -136,7 +136,7 @@ function TrailDetail({ trails, favorites, toggleFavorite, addReview }) {
           </Col>
         </Row>
 
-        {/* 描述 */}
+      
         <Row>
           <Col>
             <Card className="description-card">
@@ -148,7 +148,7 @@ function TrailDetail({ trails, favorites, toggleFavorite, addReview }) {
           </Col>
         </Row>
 
-        {/* 特性 */}
+       
         <Row>
           <Col>
             <Card className="features-card">
@@ -166,7 +166,7 @@ function TrailDetail({ trails, favorites, toggleFavorite, addReview }) {
           </Col>
         </Row>
 
-        {/* 评论区 */}
+        
         <Row>
           <Col>
             <Card className="reviews-card">
@@ -181,7 +181,7 @@ function TrailDetail({ trails, favorites, toggleFavorite, addReview }) {
                   </Button>
                 </div>
 
-                {/* 评论表单 */}
+        
                 {showReviewForm && (
                   <Form onSubmit={handleSubmitReview} className="review-form">
                     <Form.Group className="mb-3">
@@ -227,7 +227,7 @@ function TrailDetail({ trails, favorites, toggleFavorite, addReview }) {
                   </Form>
                 )}
 
-                {/* 评论列表 */}
+           
                 <div className="reviews-list">
                   {trail.reviews.length === 0 ? (
                     <p className="no-reviews">No reviews yet. Be the first to review this trail!</p>

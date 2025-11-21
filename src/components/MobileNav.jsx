@@ -64,7 +64,7 @@ function MobileNav({ trails, favorites }) {
           className="nav-button"
           onClick={(e) => {
             e.preventDefault();
-            // 滚动到收藏部分或显示收藏
+            
             if (favorites.length > 0) {
               alert(`You have ${favorites.length} favorite trail(s)!`);
             } else {

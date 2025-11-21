@@ -1,249 +1,227 @@
-/* About 容器 */
 .about-container {
-  padding: 40px 20px;
-  max-width: 1200px;
-  animation: fadeIn 0.6s ease-in;
+  padding: 32px 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  animation: fadeIn .4s ease-out;
 }
 
-/* 头部 */
 .about-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 36px;
 }
 
 .about-icon {
-  font-size: 80px;
-  color: #27ae60;
-  margin-bottom: 20px;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  font-size: 56px;
+  color: #04aa6d;
+  margin-bottom: 14px;
 }
 
 .about-header h1 {
-  font-size: 42px;
-  font-weight: 800;
-  color: #2c3e50;
-  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 6px;
 }
 
 .subtitle {
-  font-size: 20px;
-  color: #7f8c8d;
+  font-size: 15px;
+  color: #6b7280;
   font-weight: 500;
 }
 
-/* Mission Card */
 .mission-card {
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
-  color: white;
+  background: #04aa6d;
+  color: #ffffff;
+  border-radius: 12px;
   padding: 20px;
+  margin-bottom: 28px;
 }
 
 .mission-card h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.mission-card p {
-  font-size: 17px;
-  line-height: 1.8;
-  margin: 0;
-}
-
-/* Feature Cards */
-.features-section {
-  margin-top: 40px;
-}
-
-.feature-card {
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: all 0.3s;
-  height: 100%;
-  overflow: hidden;
-}
-
-.feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.feature-icon {
-  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
-  color: white;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 35px;
-  margin: 30px auto 20px;
-  transition: transform 0.3s;
-}
-
-.feature-card:hover .feature-icon {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.feature-card h3 {
   font-size: 20px;
-  font-weight: 700;
-  color: #2c3e50;
   margin-bottom: 10px;
-}
-
-.feature-card p {
-  color: #7f8c8d;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-/* Team Card */
-.team-card {
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
-.team-card h2 {
-  font-size: 28px;
-  color: #2c3e50;
-  margin-bottom: 20px;
-}
-
-.team-card p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #555;
-}
-
-.team-card strong {
-  color: #27ae60;
   font-weight: 600;
 }
 
-.team-links {
-  margin-top: 20px;
+.mission-card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.features-section {
+  margin-top: 28px;
+}
+
+.feature-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  text-align: center;
+  height: 100%;
+  transition: transform .16s ease, box-shadow .16s ease;
+  padding: 24px 18px;
+  background: #ffffff;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+}
+
+.feature-icon {
+  background: #04aa6d;
+  color: #ffffff;
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
   display: flex;
-  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0 auto 14px;
+}
+
+.feature-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+.feature-card p {
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.team-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  padding: 20px;
+  background: #ffffff;
+  margin-top: 32px;
+}
+
+.team-card h2 {
+  font-size: 20px;
+  color: #1f2937;
+  margin-bottom: 14px;
+}
+
+.team-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.team-card strong {
+  color: #04aa6d;
+}
+
+.team-links {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
   justify-content: center;
 }
 
 .team-links a {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: #2c3e50;
-  color: white;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #1f2937;
+  color: #ffffff;
   text-decoration: none;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: all 0.3s;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background .15s ease, transform .15s ease;
 }
 
 .team-links a:hover {
-  background: #27ae60;
+  background: #04aa6d;
   transform: translateY(-2px);
 }
 
 .team-links svg {
-  font-size: 20px;
+  font-size: 16px;
 }
 
-/* Tech Card */
 .tech-card {
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
   padding: 20px;
+  background: #ffffff;
+  margin-top: 32px;
 }
 
 .tech-card h2 {
-  font-size: 28px;
-  color: #2c3e50;
-  margin-bottom: 20px;
+  font-size: 20px;
+  color: #1f2937;
+  margin-bottom: 16px;
 }
 
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
+  gap: 10px;
+  justify-content: flex-start;
 }
 
 .tech-badge {
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  transition: all 0.3s;
-  cursor: default;
+  background: #04aa6d;
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
-.tech-badge:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-}
-
-/* Footer */
 .about-footer {
   text-align: center;
-  margin-top: 60px;
-  padding-top: 40px;
-  border-top: 2px solid #ecf0f1;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid #e5e7eb;
 }
 
 .about-footer p {
-  color: #7f8c8d;
-  font-size: 16px;
-  margin: 8px 0;
+  color: #6b7280;
+  font-size: 14px;
+  margin: 6px 0;
 }
 
 .copyright {
-  font-size: 14px;
+  font-size: 12px;
+  color: #9ca3af;
 }
 
-/* 响应式 */
 @media (max-width: 767px) {
   .about-header h1 {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   .subtitle {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .about-icon {
-    font-size: 60px;
+    font-size: 48px;
   }
 
   .mission-card h2,
   .team-card h2,
   .tech-card h2 {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .feature-icon {
-    width: 70px;
-    height: 70px;
-    font-size: 30px;
+    width: 54px;
+    height: 54px;
+    font-size: 24px;
   }
+}
 
-  .tech-stack {
-    justify-content: flex-start;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }

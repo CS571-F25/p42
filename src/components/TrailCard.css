@@ -1,221 +1,205 @@
-/* Trail Card */
 .trail-card {
-  border: none;
-  border-radius: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+  transition: transform .15s ease, box-shadow .15s ease;
   height: 100%;
-  background: white;
-  animation: fadeIn 0.5s ease-in;
+  display: flex;
+  flex-direction: column;
 }
 
 .trail-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0,0,0,.1);
 }
 
-.trail-card.mobile {
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-/* 卡片图片 */
 .card-image-container {
   position: relative;
+  height: 160px;
   overflow: hidden;
-  height: 250px;
 }
 
 .card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform .45s ease;
 }
 
 .trail-card:hover .card-image {
-  transform: scale(1.1);
+  transform: scale(1.04);
 }
 
 .image-overlay {
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 10px;
+  left: 10px;
   z-index: 2;
 }
 
 .difficulty-badge {
-  padding: 6px 12px;
-  font-size: 13px;
+  padding: 4px 10px;
+  font-size: 10px;
   font-weight: 600;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,.45) !important;
+  color: #ffffff;
+  letter-spacing: .06em;
+  text-transform: uppercase;
 }
 
-/* 收藏按钮 */
 .favorite-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 10px;
+  right: 10px;
   z-index: 2;
-  background: white;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+  background: #ffffff;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  transition: all .15s;
+  border: none;
 }
 
 .favorite-btn:hover {
-  transform: scale(1.1);
-  background: #fff;
+  transform: scale(1.05);
 }
 
 .favorite-btn svg {
-  font-size: 22px;
+  font-size: 16px;
   color: #e74c3c;
-  transition: all 0.3s;
 }
 
 .heart-filled {
-  animation: heartbeat 0.5s;
+  animation: heartbeat .3s;
 }
 
 @keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  25% { transform: scale(1.3); }
-  50% { transform: scale(1.1); }
-  75% { transform: scale(1.2); }
+  0%,100% { transform: scale(1); }
+  40% { transform: scale(1.22); }
+  70% { transform: scale(1.12); }
 }
 
-/* 卡片内容 */
-.trail-card .card-body {
-  padding: 20px;
+.card-body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .trail-title {
-  font-size: 22px;
+  font-size: 15px;
   font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 12px;
-  line-height: 1.3;
+  color: #1f2937;
+  line-height: 1.35;
+  margin-bottom: 2px;
 }
 
 .trail-location {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #7f8c8d;
-  font-size: 14px;
-  margin-bottom: 15px;
+  gap: 5px;
+  color: #6b7280;
+  font-size: 12px;
 }
 
 .trail-location svg {
+  font-size: 12px;
   color: #e74c3c;
-  font-size: 16px;
 }
 
-/* 统计信息 */
 .trail-stats {
   display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #ecf0f1;
+  gap: 12px;
+  margin: 6px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #edf0f3;
 }
 
 .stat-item {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  color: #2c3e50;
+  gap: 5px;
+  font-size: 12px;
+  color: #374151;
 }
 
 .stat-item svg {
-  font-size: 16px;
+  font-size: 14px;
+  color: #04aa6d;
 }
 
 .stat-item svg.star-icon {
-  color: #f39c12;
-}
-
-.stat-item:nth-child(2) svg {
-  color: #27ae60;
-}
-
-.stat-item:nth-child(3) svg {
-  color: #3498db;
+  color: #f4b400;
 }
 
 .stat-value {
   font-weight: 600;
 }
 
-/* 描述 */
 .trail-description {
-  color: #7f8c8d;
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
-/* 特性标签 */
 .trail-features {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
-  margin-bottom: 15px;
 }
 
 .feature-badge {
-  font-size: 11px;
-  padding: 4px 10px;
+  font-size: 10px;
+  padding: 3px 8px;
   font-weight: 500;
-  border-radius: 12px;
+  border-radius: 999px;
+  background: rgba(4,170,109,.08);
+  color: #04aa6d !important;
+  border: 1px solid rgba(4,170,109,.16);
 }
 
-/* 查看详情按钮 */
 .view-btn {
-  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+  background: #04aa6d;
   border: none;
-  padding: 12px;
-  font-size: 16px;
+  padding: 8px 10px;
+  font-size: 13px;
   font-weight: 600;
   border-radius: 10px;
-  transition: all 0.3s;
+  margin-top: 4px;
+  transition: all .18s;
+  color: #ffffff;
 }
 
 .view-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
-  background: linear-gradient(135deg, #229954 0%, #27ae60 100%);
+  transform: translateY(-1px);
+  background: #038654;
+  box-shadow: 0 4px 14px rgba(4,170,109,.28);
 }
 
-/* 移动端优化 */
 @media (max-width: 767px) {
-  .trail-card {
-    border-radius: 20px;
-  }
-
   .card-image-container {
-    height: 300px;
+    height: 200px;
   }
-
+  
   .trail-title {
-    font-size: 24px;
-  }
-
-  .trail-stats {
-    flex-wrap: wrap;
+    font-size: 17px;
   }
 
   .view-btn {
-    padding: 14px;
-    font-size: 17px;
+    padding: 10px 12px;
+    font-size: 14px;
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
