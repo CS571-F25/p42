@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, Badge, Alert, Button } from 'react-bootstrap
 import { FaArrowLeft } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 
-function TrailDetail({ trails }) {
+function LikedTrailDetail({ trails }) {
   const { id } = useParams()
   const trail = trails.find(t => t.id === parseInt(id))
   const [isLiked, setIsLiked] = useState(false);
@@ -50,16 +50,16 @@ function TrailDetail({ trails }) {
     return (
       <Container className="py-4">
         <Alert variant="danger">Trail not found</Alert>
-        <Link to="/p42/" className="btn btn-primary">Back to Home</Link>
+        <Link to="/p42/likedtrails" className="btn btn-primary">Back to Liked Trails</Link>
       </Container>
     )
   }
 
   return (
     <Container className="py-4">
-      <Link to="/p42/" className="btn btn-outline-secondary mb-3">
+      <Link to="/p42/likedtrails" className="btn btn-outline-secondary mb-3">
         <FaArrowLeft className="me-2" />
-        Back to All Trails
+        Back to Liked Trails
       </Link>
 
       <Row>
@@ -124,4 +124,4 @@ function TrailDetail({ trails }) {
   )
 }
 
-export default TrailDetail
+export default LikedTrailDetail

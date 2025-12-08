@@ -9,7 +9,7 @@ function About() {
         <Col lg={8}>
           <Card className="shadow">
             <Card.Body className="p-4">
-              <h3>Our Mission</h3>
+              <h2>Our Mission</h2>
               <p>
                 Madison Hiking Guide helps students and residents discover the 
                 best hiking trails in the Madison area. Whether you're looking 
@@ -17,7 +17,7 @@ function About() {
                 got you covered.
               </p>
 
-              <h3 className="mt-4">Features</h3>
+              <h2 className="mt-4">Features</h2>
               <ul>
                 <li>Browse detailed information about local trails</li>
                 <li>Filter trails by difficulty and length</li>
@@ -26,13 +26,13 @@ function About() {
                 <li>View trail locations and features</li>
               </ul>
 
-              <h3 className="mt-4">Team</h3>
+              <h2 className="mt-4">Team</h2>
               <p>
                 This project was created by Macy Xiang, Ben Vanorny, and Ryan Li 
                 as part of the CS571 Web Development course at UW-Madison.
               </p>
 
-              <h3 className="mt-4">Technologies Used</h3>
+              <h2 className="mt-4">Technologies Used</h2>
               <ul>
                 <li>React 18</li>
                 <li>React Router</li>

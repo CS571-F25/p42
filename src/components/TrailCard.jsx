@@ -21,7 +21,7 @@ function TrailCard({ trail }) {
           {trail.description.substring(0, 100)}...
         </Card.Text>
         
-        <Link to={`/trail/${trail.id}`} className="btn btn-success w-100">
+        <Link to={`/p42/trail/${trail.id}`} className="btn btn-success w-100">
           View Details
         </Link>
       </Card.Body>
