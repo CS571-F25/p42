@@ -2,6 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import TrailCardWide from './TrailCardWide'
 import StatsPanel from './StatsPanel'
 import { useState, useEffect } from 'react'
+import PageWrapper from "./PageWrapper";
 
 function LikedTrailList({ trails }) {
   const [username, setUsername] = useState("");
@@ -25,7 +26,7 @@ function LikedTrailList({ trails }) {
   );
 
   return (
-    <Container className="py-4">
+    <PageWrapper>
       <h1 className="text-center mb-4">{username}'s Liked Trails</h1>
 
       {likedTrails.length === 0 ? (
@@ -55,7 +56,7 @@ function LikedTrailList({ trails }) {
           </Col>
         </Row>
       )}
-    </Container>
+    </PageWrapper>
   )
 }
 

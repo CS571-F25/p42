@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, Row, Col, Alert } from 'react-bootstrap';
 import TrailCard from './TrailCard';
 import FilterBar from './FilterBar';
+import PageWrapper from "./PageWrapper";
 
 function TrailList({ trails }) {
   const [difficulty, setDifficulty] = useState("");
@@ -23,7 +24,7 @@ function TrailList({ trails }) {
   });
 
   return (
-    <Container className="py-4">
+    <PageWrapper>
       <h1 className="text-center mb-4">Madison Hiking Trails</h1>
 
       <FilterBar
@@ -62,7 +63,7 @@ function TrailList({ trails }) {
           </p>
         </>
       )}
-    </Container>
+    </PageWrapper>
   );
 }
 

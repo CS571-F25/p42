@@ -1,5 +1,6 @@
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap'
 import { useState, useEffect, useRef } from 'react'
+import PageWrapper from "./PageWrapper";
 
 function Account() {
     const [username, setUsername] = useState("");
@@ -71,7 +72,7 @@ function Account() {
     }
   
     return (
-    <Container className="py-4">
+    <PageWrapper>
       <h1 className="text-center mb-4">Account</h1>
       
       <Row className="justify-content-center">
@@ -92,7 +93,7 @@ function Account() {
           </Card>
         </Col>
       </Row>
-    </Container>
+    </PageWrapper>
   )
 }
 

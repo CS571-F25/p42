@@ -1,8 +1,9 @@
 import { Container, Row, Col, Card } from 'react-bootstrap'
+import PageWrapper from "./PageWrapper";
 
 function About() {
   return (
-    <Container className="py-4">
+    <PageWrapper>
       <h1 className="text-center mb-4">About Madison Hiking Guide</h1>
       
       <Row className="justify-content-center">
@@ -42,7 +43,7 @@ function About() {
           </Card>
         </Col>
       </Row>
-    </Container>
+    </PageWrapper>
   )
 }
 

@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Badge, Alert, Button } from 'react-bootstrap
 import { FaArrowLeft } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import TrailFeatureChips from './TrailFeatureChips'
+import PageWrapper from "./PageWrapper";
 
 function LikedTrailDetail({ trails }) {
   const { id } = useParams()
@@ -57,7 +58,7 @@ function LikedTrailDetail({ trails }) {
   }
 
   return (
-    <Container className="py-4">
+    <PageWrapper>
       <Link to="/p42/likedtrails" className="btn btn-outline-secondary mb-3">
         <FaArrowLeft className="me-2" />
         Back to Liked Trails
@@ -117,7 +118,7 @@ function LikedTrailDetail({ trails }) {
           </Card>
         </Col>
       </Row>
-    </Container>
+    </PageWrapper>
   )
 }
 

@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Badge, Alert, Button } from 'react-bootstrap
 import { FaArrowLeft } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import TrailFeatureChips from './TrailFeatureChips'
+import PageWrapper from "./PageWrapper";
 
 function TrailDetail({ trails }) {
   const { id } = useParams()
@@ -49,15 +50,15 @@ function TrailDetail({ trails }) {
 
   if (!trail) {
     return (
-      <Container className="py-4">
+      <PageWrapper>
         <Alert variant="danger">Trail not found</Alert>
         <Link to="/p42/" className="btn btn-primary">Back to Home</Link>
-      </Container>
+      </PageWrapper>
     )
   }
 
   return (
-    <Container className="py-4">
+    <PageWrapper>
       <Link to="/p42/" className="btn btn-outline-secondary mb-3">
         <FaArrowLeft className="me-2" />
         Back to All Trails
@@ -117,7 +118,7 @@ function TrailDetail({ trails }) {
           </Card>
         </Col>
       </Row>
-    </Container>
+    </PageWrapper>
   )
 }
 
