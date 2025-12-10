@@ -1,4 +1,3 @@
-// LikedTrailList.jsx
 import { Row, Col, Card, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -100,7 +99,6 @@ function LikedTrailList({ trails }) {
           </Col>
         </Row>
       ) : (
-        // 有 liked trails 时：左列表 + 右统计
         <Row className="align-items-start">
           <Col md={8} className="mb-4">
             {likedTrails.map((trail) => (

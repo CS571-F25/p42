@@ -89,23 +89,24 @@ function Account() {
 
               {isAnonymous ? (
                 <p className="text-muted small mb-3">
-                  You haven’t told us your name yet!
+                  You haven't told us your name yet!
                   <br />
                   Set a username below so we can save your favorite trails just for you.
                 </p>
               ) : (
                 <p className="text-muted small mb-3">
-                  You’re signed in as <strong>{username}</strong>!
+                  You're signed in as <strong>{username}</strong>!
                   <br />
-                  Feel free to start liking trails — we’ll keep your favorites safe and cozy here.
+                  Feel free to start liking trails — we'll keep your favorites safe and cozy here.
                 </p>
               )}
 
               <Form onSubmit={handleUsernameChange} className="mb-4">
                 <Form.Group className="mb-3">
-                  <Form.Label>New Username</Form.Label>
+                  <Form.Label for="new-username">New Username</Form.Label>
                   <Form.Control
                     ref={newUsernameRef}
+                    id="new-username"
                     placeholder="Enter a new display name"
                   />
                 </Form.Group>

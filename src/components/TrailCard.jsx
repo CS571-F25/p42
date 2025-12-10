@@ -8,6 +8,7 @@ function TrailCard({ trail }) {
         variant="top" 
         src={trail.image} 
         style={{ height: '200px', objectFit: 'cover' }}
+        alt={trail.name}
       />
       <Card.Body className="d-flex flex-column">
         <Card.Title>{trail.name}</Card.Title>
