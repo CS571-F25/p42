@@ -2,6 +2,19 @@ html {
   overflow-y: scroll;
 }
 
+body {
+  background-color: #f4f7f5; 
+}
+
+.navbar,
+.footer-bar {
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.btn {
+  border-radius: 999px;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
