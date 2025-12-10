@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { Container, Row, Col, Card, Badge, Alert, Button } from 'react-bootstrap'
+import { Row, Col, Card, Badge, Alert, Button } from 'react-bootstrap'
 import { FaArrowLeft } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import TrailFeatureChips from './TrailFeatureChips'
@@ -31,11 +31,18 @@ function TrailDetail({ trails }) {
       }
     }).then(res => res.json()).then(json => {
       const newUserInfo = Object.values(json.results)[0];
+
+      if (newUserInfo.username === "Anonymous") {
+        alert("To like trails, please set a username in the Account page first.");
+        return;
+      }
+
       if (isLiked) {
         newUserInfo.likedTrails = newUserInfo.likedTrails.filter(i => i !== id);
       } else {
         newUserInfo.likedTrails.push(id);
       }
+
       fetch(`https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo?id=${Object.keys(json.results)[0]}`, {
         method: "PUT",
         headers: {
@@ -44,9 +51,11 @@ function TrailDetail({ trails }) {
         },
         body: JSON.stringify(newUserInfo)
       })
-    })
+    });
+
     setIsLiked(old => !old);
-  }
+  };
+
 
   if (!trail) {
     return (
@@ -66,13 +75,13 @@ function TrailDetail({ trails }) {
 
       <Row>
         <Col lg={8}>
-          <img 
-            src={trail.image} 
+          <img
+            src={trail.image}
             alt={trail.name}
             className="w-100 rounded mb-3"
             style={{ maxHeight: '400px', objectFit: 'cover' }}
           />
-          
+
           <h1>{trail.name}</h1>
           <p className="text-muted mb-2">📍 {trail.location}</p>
 
@@ -89,7 +98,7 @@ function TrailDetail({ trails }) {
             <Card.Body>
               <h5>About This Trail</h5>
               <p>{trail.description}</p>
-              
+
               <h6 className="mt-3">Features</h6>
               <TrailFeatureChips features={trail.features} />
             </Card.Body>

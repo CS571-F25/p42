@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Container, Row, Col, Alert } from 'react-bootstrap';
-import TrailCard from './TrailCard';
-import FilterBar from './FilterBar';
+import { Row, Col, Alert } from "react-bootstrap";
+import TrailCard from "./TrailCard";
+import FilterBar from "./FilterBar";
 import PageWrapper from "./PageWrapper";
 
 function TrailList({ trails }) {
@@ -13,7 +13,7 @@ function TrailList({ trails }) {
     setMaxDistance("");
   };
 
-  const filtered = trails.filter(trail => {
+  const filtered = trails.filter((trail) => {
     let ok = true;
     if (difficulty && trail.difficulty !== difficulty) ok = false;
     if (maxDistance) {
@@ -37,22 +37,22 @@ function TrailList({ trails }) {
 
       {(!trails || trails.length === 0) && (
         <Alert variant="info" className="mt-3 text-center">
-          Loading trails... If this message doesn&apos;t go away, please refresh the page.
+          Loading trails... If this message doesn&apos;t go away, please refresh the
+          page.
         </Alert>
       )}
 
       {trails.length > 0 && filtered.length === 0 && (
         <Alert variant="warning" className="mt-3 text-center">
-          No trails match your current filters. Try adjusting the difficulty or max distance,
-          or click&nbsp;
-          <strong>Reset Filters</strong> above.
+          No trails match your current filters. Try adjusting the difficulty or max
+          distance, or click <strong>Reset Filters</strong> above.
         </Alert>
       )}
 
       {filtered.length > 0 && (
         <>
           <Row>
-            {filtered.map(trail => (
+            {filtered.map((trail) => (
               <Col key={trail.id} md={6} lg={4} className="mb-4">
                 <TrailCard trail={trail} />
               </Col>

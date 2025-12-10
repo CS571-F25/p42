@@ -25,6 +25,7 @@ function FilterBar({ difficulty, setDifficulty, maxDistance, setMaxDistance, onR
             min="0"
             value={maxDistance}
             onChange={e => setMaxDistance(e.target.value)}
+            placeholder="Enter max miles"
           />
         </Col>
         <Col md={4} className="d-flex align-items-end">

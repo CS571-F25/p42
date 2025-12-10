@@ -1,100 +1,140 @@
-import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap'
+import { Row, Col, Card, Form, Button } from 'react-bootstrap'
 import { useState, useEffect, useRef } from 'react'
 import PageWrapper from "./PageWrapper";
 
 function Account() {
-    const [username, setUsername] = useState("");
-    const newUsernameRef = useRef(null);
-    
-    useEffect(() => {
+  const [username, setUsername] = useState("");
+  const newUsernameRef = useRef(null);
+
+  useEffect(() => {
+    fetch('https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo', {
+      method: "GET",
+      headers: {
+        "X-CS571-ID": CS571.getBadgerId(),
+      }
+    }).then(res => res.json()).then(json => {
+      setUsername(Object.values(json.results)[0].username);
+    })
+  }, []);
+
+  const handleUsernameChange = (e) => {
+    e.preventDefault();
+    if (!newUsernameRef.current.value.trim()) {
+      alert("Your username must have at least one character!");
+      return;
+    }
+    fetch('https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo', {
+      method: "GET",
+      headers: {
+        "X-CS571-ID": CS571.getBadgerId(),
+        "Content-Type": "application/json",
+      }
+    }).then(res => res.json()).then(json => {
+      const newUserInfo = Object.values(json.results)[0];
+      newUserInfo.username = newUsernameRef.current.value.trim();
+      fetch(`https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo?id=${Object.keys(json.results)[0]}`, {
+        method: "PUT",
+        headers: {
+          "X-CS571-ID": CS571.getBadgerId(),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUserInfo)
+      })
+    });
+    setUsername(newUsernameRef.current.value.trim());
+    newUsernameRef.current.value = "";
+  };
+
+  const handleAccountReset = () => {
+    const confirmation = confirm(
+      "WARNING: Resetting your account will reset your username and remove all liked trails. Continue?"
+    );
+
+    if (confirmation) {
       fetch('https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo', {
         method: "GET",
         headers: {
           "X-CS571-ID": CS571.getBadgerId(),
+          "Content-Type": "application/json",
         }
       }).then(res => res.json()).then(json => {
-        setUsername(Object.values(json.results)[0].username);
-      })
-    }, [])
-
-    const handleUsernameChange = (e) => {
-        e.preventDefault();
-        if (newUsernameRef.current.value === "") {
-            alert("Your username must have at least one character!");
-            return;
-        }
-        fetch('https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo', {
-            method: "GET",
-            headers: {
-                "X-CS571-ID": CS571.getBadgerId(),
-                "Content-Type": "application/json",
-            }
-        }).then(res => res.json()).then(json => {
-            const newUserInfo = Object.values(json.results)[0];
-            newUserInfo.username = newUsernameRef.current.value;
-            fetch(`https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo?id=${Object.keys(json.results)[0]}`, {
-                method: "PUT",
-                headers: {
-                    "X-CS571-ID": CS571.getBadgerId(),
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(newUserInfo)
-            })
+        fetch(`https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo?id=${Object.keys(json.results)[0]}`, {
+          method: "PUT",
+          headers: {
+            "X-CS571-ID": CS571.getBadgerId(),
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: "Anonymous",
+            likedTrails: []
+          })
         })
-        setUsername(newUsernameRef.current.value);
+      });
+      setUsername("Anonymous");
     }
+  };
 
-    const handleAccountReset = () => {
-        let confirmation = confirm("WARNING: Resetting your account will reset your username and remove all liked trails. Continue?");
+  const isAnonymous = !username || username === "Anonymous";
 
-        if (confirmation) {
-            fetch('https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo', {
-                method: "GET",
-                headers: {
-                    "X-CS571-ID": CS571.getBadgerId(),
-                    "Content-Type": "application/json",
-                }
-            }).then(res => res.json()).then(json => {
-                fetch(`https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo?id=${Object.keys(json.results)[0]}`, {
-                    method: "PUT",
-                    headers: {
-                        "X-CS571-ID": CS571.getBadgerId(),
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        username: "Anonymous",
-                        likedTrails: []
-                    })
-                })
-            })
-            setUsername("Anonymous");
-        }
-    }
-  
-    return (
+  return (
     <PageWrapper>
-      <h1 className="text-center mb-4">Account</h1>
-      
       <Row className="justify-content-center">
-        <Col lg={8} className="d-flex justify-content-center">
-          <Card className="shadow">
+        <Col xs={12} md={8} lg={6}>
+          <h1 className="text-center mb-4">Account</h1>
+
+          <Card className="shadow-sm">
             <Card.Body className="p-4">
-              <h2>Username: {username}</h2>
-              <Form onSubmit={handleUsernameChange}>
-                <Form.Group>
-                  <Form.Label htmlFor="newUsername">New Username:</Form.Label>
-                  <Form.Control id="newUsername" type="text" ref={newUsernameRef} />
+
+              <h2 className="h4 mb-2">Profile</h2>
+
+              {isAnonymous ? (
+                <p className="text-muted small mb-3">
+                  You haven’t told us your name yet!
+                  <br />
+                  Set a username below so we can save your favorite trails just for you.
+                </p>
+              ) : (
+                <p className="text-muted small mb-3">
+                  You’re signed in as <strong>{username}</strong>!
+                  <br />
+                  Feel free to start liking trails — we’ll keep your favorites safe and cozy here.
+                </p>
+              )}
+
+              <Form onSubmit={handleUsernameChange} className="mb-4">
+                <Form.Group className="mb-3">
+                  <Form.Label>New Username</Form.Label>
+                  <Form.Control
+                    ref={newUsernameRef}
+                    placeholder="Enter a new display name"
+                  />
                 </Form.Group>
-                <Button type="submit">Change Username</Button>
+                <Button type="submit" className="w-100">
+                  Change Username
+                </Button>
               </Form>
-              <br />
-              <Button variant="danger" onClick={handleAccountReset}>Reset Account</Button>
+
+              <hr />
+
+              <h2 className="h5 mb-2">Danger zone</h2>
+              <p className="text-muted small mb-3">
+                Resetting your account will clear your username and remove all liked trails.
+                This is similar to logging out and starting fresh.
+              </p>
+              <Button
+                variant="outline-danger"
+                onClick={handleAccountReset}
+                className="w-100"
+              >
+                Reset Account
+              </Button>
+
             </Card.Body>
           </Card>
         </Col>
       </Row>
     </PageWrapper>
-  )
+  );
 }
 
-export default Account
+export default Account;
