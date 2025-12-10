@@ -9,6 +9,14 @@ import Account from './components/Account'
 import LikedTrailList from './components/LikedTrailList'
 import LikedTrailDetail from './components/LikedTrailDetail'
 import Footer from './components/Footer'
+import picnicPointImg from './assets/picnicpoint.jpg'
+import lakeshoreImg from './assets/lakeshoretrail.jpg'
+import arboretumImg from './assets/arboretum.jpg'
+import capitalSpringsImg from './assets/capitalsprings.jpg'
+import olbrichImg from './assets/olbrich.jpg'
+import olinParkImg from './assets/olinpark.jpg'
+import owenParkImg from './assets/owenpark.webp'
+import pheasantBranchImg from './assets/pheasantbranch.jpg'
 
 const trailsData = [
   {
@@ -18,7 +26,7 @@ const trailsData = [
     "difficulty": "Easy",
     "distance": "2 mi",
     "description": "Scenic stroll along Lake Mendota popular among UW students.",
-    "image": "src/assets/picnicpoint.jpg",
+    "image": picnicPointImg,
     "features": ["Lake Views", "Parking Available", "Dog Friendly"]
   },
   {
@@ -28,7 +36,7 @@ const trailsData = [
     "difficulty": "Medium",
     "distance": "3 mi",
     "description": "Features trails around Lake Mendota through forests, prairies, and gardens.",
-    "image": "src/assets/lakeshoretrail.jpg",
+    "image": lakeshoreImg,
     "features": ["Lake Views", "Parking Available", "Dog Friendly"]
   },
   {
@@ -38,7 +46,7 @@ const trailsData = [
     "difficulty": "Hard",
     "distance": "3 mi",
     "description": "Long, winding trails through the forests and marshes around Lake Wingra.",
-    "image": "src/assets/arboretum.jpg",
+    "image": arboretumImg,
     "features": ["Lake Views", "Parking Available", "Bike Friendly"]
   },
   {
@@ -48,7 +56,7 @@ const trailsData = [
     "difficulty": "Medium",
     "distance": "3 mi",
     "description": "Large semi-forested loop featuring an extensive boardwalk.",
-    "image": "src/assets/pheasantbranch.jpg",
+    "image": pheasantBranchImg,
     "features": ["Parking Available", "Dog Friendly", "Bike Friendly"]
   },
   {
@@ -58,7 +66,7 @@ const trailsData = [
     "difficulty": "Medium",
     "distance": "3 mi",
     "description": "Peaceful park on Lake Monona with additional wooded trails.",
-    "image": "src/assets/olinpark.jpg",
+    "image": olinParkImg,
     "features": ["Lake Views", "Parking Available", "Dog Friendly", "Boat Launch"]
   },
   {
@@ -68,7 +76,7 @@ const trailsData = [
     "difficulty": "Medium",
     "distance": "1 mi",
     "description": "Meandering trails with great lookout points.",
-    "image": "src/assets/owenpark.webp",
+    "image": owenParkImg,
     "features": ["Parking Available", "Dog Friendly"]
   },
   {
@@ -78,7 +86,7 @@ const trailsData = [
     "difficulty": "Hard",
     "distance": "5 mi",
     "description": "Expansive natural area perfect for a wide range of outdoor activities.",
-    "image": "src/assets/capitalsprings.jpg",
+    "image": capitalSpringsImg,
     "features": ["Lake Views", "Parking Available", "Dog Friendly", "Bike Friendly", "Campsites", "Boat Launch"]
   },
   {
@@ -88,7 +96,7 @@ const trailsData = [
     "difficulty": "Easy",
     "distance": "1 mi",
     "description": "Short but dense trails around sculptures and plants.",
-    "image": "src/assets/olbrich.jpg",
+    "image": olbrichImg,
     "features": ["Parking Available", "Indoor Area"]
   }
 ]
