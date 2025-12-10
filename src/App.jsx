@@ -135,15 +135,20 @@ function App() {
       <div className="App d-flex flex-column min-vh-100">
         <Navigation />
 
-        <div className="flex-grow-1">
-          <Routes>
-            <Route path="/p42/" element={<TrailList trails={trails} />} />
-            <Route path="/p42/trail/:id" element={<TrailDetail trails={trails} />} />
-            <Route path="/p42/likedtrail/:id" element={<LikedTrailDetail trails={trails} />} />
-            <Route path="/p42/about" element={<About />} />
-            <Route path="/p42/likedtrails" element={<LikedTrailList trails={trails} />} />
-            <Route path="/p42/account" element={<Account />} />
-          </Routes>
+        
+        <div className="flex-grow-1 main-content">
+          
+          <div className="container">
+            <Routes>
+              <Route path="/p42/" element={<TrailList trails={trails} />} />
+              <Route path="/p42/trail/:id" element={<TrailDetail trails={trails} />} />
+              <Route path="/p42/likedtrail/:id" element={<LikedTrailDetail trails={trails} />} />
+              <Route path="/p42/about" element={<About />} />
+              <Route path="/p42/likedtrails" element={<LikedTrailList trails={trails} />} />
+              <Route path="/p42/account" element={<Account />} />
+            </Routes>
+          </div>
+         
         </div>
 
         <Footer />
