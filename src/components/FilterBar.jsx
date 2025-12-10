@@ -13,7 +13,7 @@ function FilterBar({ difficulty, setDifficulty, maxDistance, setMaxDistance, onR
           >
             <option value="">All</option>
             <option value="Easy">Easy</option>
-            <option value="Moderate">Moderate</option>
+            <option value="Medium">Medium</option>
             <option value="Hard">Hard</option>
           </Form.Select>
         </Col>
