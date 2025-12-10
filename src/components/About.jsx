@@ -23,7 +23,6 @@ function About() {
                 <li>Browse detailed information about local trails</li>
                 <li>Filter trails by difficulty and length</li>
                 <li>Save your favorite trails</li>
-                <li>Read and write reviews</li>
                 <li>View trail locations and features</li>
               </ul>
 
