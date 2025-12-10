@@ -17,21 +17,79 @@ const trailsData = [
     "location": "University Bay Drive, Madison, WI",
     "difficulty": "Easy",
     "distance": "2 mi",
-    "description": "A scenic lakeside trail perfect for walking, running, or biking. Picnic Point offers beautiful views of Lake Mendota and is a popular spot for students and locals alike.",
-    "image": "https://images.unsplash.com/photo-1551632811-561732d1e306?w=500",
-    "features": ["Lake Views", "Accessible", "Dog Friendly"],
-    "reviews": []
+    "description": "Scenic stroll along Lake Mendota popular among UW students.",
+    "image": "src/assets/picnicpoint.jpg",
+    "features": ["Lake Views", "Parking Available", "Dog Friendly"]
   },
   {
     "id": 2,
     "name": "Lakeshore Trail",
-    "location": "idk",
+    "location": "University Bay Drive, Madison, WI",
     "difficulty": "Medium",
     "distance": "3 mi",
-    "description": "Features wooded trails around a beautiful lake.",
-    "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500",
-    "features": ["Dog Friendly", "Lake Views", "Parking Available"],
-    "reviews": []
+    "description": "Features trails around Lake Mendota through forests, prairies, and gardens.",
+    "image": "src/assets/lakeshoretrail.jpg",
+    "features": ["Lake Views", "Parking Available", "Dog Friendly"]
+  },
+  {
+    "id": 3,
+    "name": "UW-Madison Arboretum",
+    "location": "Arboretum Drive, Madison, WI",
+    "difficulty": "Hard",
+    "distance": "3 mi",
+    "description": "Long, winding trails through the forests and marshes around Lake Wingra.",
+    "image": "src/assets/arboretum.jpg",
+    "features": ["Lake Views", "Parking Available", "Bike Friendly"]
+  },
+  {
+    "id": 4,
+    "name": "Pheasant Branch Conservancy",
+    "location": "Pheasant Branch Road, Middleton, WI",
+    "difficulty": "Medium",
+    "distance": "3 mi",
+    "description": "Large semi-forested loop featuring an extensive boardwalk.",
+    "image": "src/assets/pheasantbranch.jpg",
+    "features": ["Parking Available", "Dog Friendly", "Bike Friendly"]
+  },
+  {
+    "id": 5,
+    "name": "Olin Park",
+    "location": "Olin-Turville Court, Madison, WI",
+    "difficulty": "Medium",
+    "distance": "3 mi",
+    "description": "Peaceful park on Lake Monona with additional wooded trails.",
+    "image": "src/assets/olinpark.jpg",
+    "features": ["Lake Views", "Parking Available", "Dog Friendly", "Boat Launch"]
+  },
+  {
+    "id": 6,
+    "name": "Owen Conservation Park",
+    "location": "Old Sauk Road, Madison, WI",
+    "difficulty": "Medium",
+    "distance": "1 mi",
+    "description": "Meandering trails with great lookout points.",
+    "image": "src/assets/owenpark.webp",
+    "features": ["Parking Available", "Dog Friendly"]
+  },
+  {
+    "id": 7,
+    "name": "Capital Springs State Recreation Area",
+    "location": "Lake Farm Road, Madison, WI",
+    "difficulty": "Hard",
+    "distance": "5 mi",
+    "description": "Expansive natural area perfect for a wide range of outdoor activities.",
+    "image": "src/assets/capitalsprings.jpg",
+    "features": ["Lake Views", "Parking Available", "Dog Friendly", "Bike Friendly", "Campsites", "Boat Launch"]
+  },
+  {
+    "id": 8,
+    "name": "Olbrich Botanical Gardens",
+    "location": "Atwood Avenue, Madison, WI",
+    "difficulty": "Easy",
+    "distance": "1 mi",
+    "description": "Short but dense trails around sculptures and plants.",
+    "image": "src/assets/olbrich.jpg",
+    "features": ["Parking Available", "Indoor Area"]
   }
 ]
 
