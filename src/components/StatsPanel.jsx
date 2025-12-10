@@ -3,7 +3,7 @@ import { Card, ListGroup } from "react-bootstrap";
 function StatsPanel({ trails, likedIds }) {
   const total = trails.length;
   const easy = trails.filter(t => t.difficulty === "Easy").length;
-  const moderate = trails.filter(t => t.difficulty === "Moderate").length;
+  const medium = trails.filter(t => t.difficulty === "Medium").length;
   const hard = trails.filter(t => t.difficulty === "Hard").length;
 
   return (
@@ -13,7 +13,7 @@ function StatsPanel({ trails, likedIds }) {
         <ListGroup variant="flush">
           <ListGroup.Item>Total trails: {total}</ListGroup.Item>
           <ListGroup.Item>Easy: {easy}</ListGroup.Item>
-          <ListGroup.Item>Moderate: {moderate}</ListGroup.Item>
+          <ListGroup.Item>Medium: {medium}</ListGroup.Item>
           <ListGroup.Item>Hard: {hard}</ListGroup.Item>
           <ListGroup.Item>Liked by you: {likedIds.length}</ListGroup.Item>
         </ListGroup>

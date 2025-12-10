@@ -51,9 +51,8 @@ function TrailDetail({ trails }) {
         },
         body: JSON.stringify(newUserInfo)
       })
+      setIsLiked(old => !old);
     });
-
-    setIsLiked(old => !old);
   };
 
 
