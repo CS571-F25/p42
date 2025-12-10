@@ -8,9 +8,9 @@ import About from './components/About'
 import Account from './components/Account'
 import LikedTrailList from './components/LikedTrailList'
 import LikedTrailDetail from './components/LikedTrailDetail'
+import Footer from './components/Footer'
 
-
-const trailsData = [ // much of this stuff is placeholder for now, especially the pictures
+const trailsData = [
   {
     "id": 1,
     "name": "Picnic Point Trail",
@@ -41,7 +41,7 @@ function App() {
   useEffect(() => {
     setTrails(trailsData);
 
-    // Check if user has userinfo; if not, create it
+    // Ensure userinfo exists
     fetch('https://cs571api.cs.wisc.edu/rest/f25/bucket/', {
       method: "GET",
       headers: {
@@ -66,34 +66,21 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App d-flex flex-column min-vh-100">
         <Navigation />
-        <Routes>
-          <Route 
-            path="/p42/" 
-            element={<TrailList trails={trails} />} 
-          />
-          <Route 
-            path="/p42/trail/:id" 
-            element={<TrailDetail trails={trails} />} 
-          />
-          <Route 
-            path="/p42/likedtrail/:id" 
-            element={<LikedTrailDetail trails={trails} />} 
-          />
-          <Route 
-            path="/p42/about"
-            element={<About />} 
-          />
-          <Route 
-            path="/p42/likedtrails"
-            element={<LikedTrailList trails={trails} />} 
-          />
-          <Route 
-            path="/p42/account"
-            element={<Account />} 
-          />
-        </Routes>
+
+        <div className="flex-grow-1">
+          <Routes>
+            <Route path="/p42/" element={<TrailList trails={trails} />} />
+            <Route path="/p42/trail/:id" element={<TrailDetail trails={trails} />} />
+            <Route path="/p42/likedtrail/:id" element={<LikedTrailDetail trails={trails} />} />
+            <Route path="/p42/about" element={<About />} />
+            <Route path="/p42/likedtrails" element={<LikedTrailList trails={trails} />} />
+            <Route path="/p42/account" element={<Account />} />
+          </Routes>
+        </div>
+
+        <Footer />
       </div>
     </BrowserRouter>
   )

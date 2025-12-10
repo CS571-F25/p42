@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { Container, Row, Col, Card, Badge, Alert, Button } from 'react-bootstrap'
 import { FaArrowLeft } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
+import TrailFeatureChips from './TrailFeatureChips'
 
 function LikedTrailDetail({ trails }) {
   const { id } = useParams()
@@ -9,41 +10,41 @@ function LikedTrailDetail({ trails }) {
   const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
-      fetch('https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo', {
-        method: "GET",
-        headers: {
-          "X-CS571-ID": CS571.getBadgerId(),
-        }
-      }).then(res => res.json()).then(json => {
-        setIsLiked(Object.values(json.results)[0].likedTrails.includes(id));
-      })
-    }, [])
+    fetch('https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo', {
+      method: "GET",
+      headers: {
+        "X-CS571-ID": CS571.getBadgerId(),
+      }
+    }).then(res => res.json()).then(json => {
+      setIsLiked(Object.values(json.results)[0].likedTrails.includes(id));
+    })
+  }, [id])
   
   const handleLike = (e) => {
     e.preventDefault();
     fetch('https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo', {
-        method: "GET",
-        headers: {
-            "X-CS571-ID": CS571.getBadgerId(),
-            "Content-Type": "application/json",
-        }
+      method: "GET",
+      headers: {
+        "X-CS571-ID": CS571.getBadgerId(),
+        "Content-Type": "application/json",
+      }
     }).then(res => res.json()).then(json => {
-        const newUserInfo = Object.values(json.results)[0];
-        if (isLiked) {
-          newUserInfo.likedTrails = newUserInfo.likedTrails.filter(i => i !== id);
-        } else {
-          newUserInfo.likedTrails.push(id);
-        }
-        fetch(`https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo?id=${Object.keys(json.results)[0]}`, {
-            method: "PUT",
-            headers: {
-                "X-CS571-ID": CS571.getBadgerId(),
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newUserInfo)
-        })
+      const newUserInfo = Object.values(json.results)[0];
+      if (isLiked) {
+        newUserInfo.likedTrails = newUserInfo.likedTrails.filter(i => i !== id);
+      } else {
+        newUserInfo.likedTrails.push(id);
+      }
+      fetch(`https://cs571api.cs.wisc.edu/rest/f25/bucket/userinfo?id=${Object.keys(json.results)[0]}`, {
+        method: "PUT",
+        headers: {
+          "X-CS571-ID": CS571.getBadgerId(),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUserInfo)
+      })
     })
-    setIsLiked((old) => !old);
+    setIsLiked(old => !old);
   }
 
   if (!trail) {
@@ -89,13 +90,7 @@ function LikedTrailDetail({ trails }) {
               <p>{trail.description}</p>
               
               <h6 className="mt-3">Features</h6>
-              <div>
-                {trail.features.map((feature, index) => (
-                  <Badge key={index} bg="success" className="me-2 mb-2">
-                    {feature}
-                  </Badge>
-                ))}
-              </div>
+              <TrailFeatureChips features={trail.features} />
             </Card.Body>
           </Card>
         </Col>
@@ -115,7 +110,9 @@ function LikedTrailDetail({ trails }) {
           </Card>
           <Card>
             <Card.Body>
-              <Button onClick={handleLike}>❤️ {isLiked ? "Unlike" : "Like"} this trail</Button>
+              <Button onClick={handleLike}>
+                ❤️ {isLiked ? "Unlike" : "Like"} this trail
+              </Button>
             </Card.Body>
           </Card>
         </Col>
